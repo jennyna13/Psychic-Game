@@ -19,7 +19,7 @@ function htmlText(){
 
 function startGame(){
     computerGuesses = computer [Math.floor(Math.random() * computer.length)];
-    guesses = 10;
+    guessesLeft = 10;
     yourGuesses = [];
 }
 
@@ -33,9 +33,9 @@ document.onkeypress = function(event) {
     if (computerGuesses === myGuesses && guessesLeft > 1) {
         
         wins ++;
-        guessesLeft = 10;
+        
         startGame();
-    } else if (computerGuesses !== myGuesses && guesses >1){
+    } else if (computerGuesses !== myGuesses && guessesLeft >1){
         
         guessesLeft --;  
         yourGuesses.push(myGuesses);
